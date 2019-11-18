@@ -49,7 +49,8 @@ public class Day16 {
             }
             final String danced = sb.toString();
             if (seen.contains(danced)) {
-                return seen.get((int)(times % j) - 1);
+                final int index = (int)(times % j) - 1;
+                return seen.get(index < 0 ? seen.size() -1 : index);
             } else {
                 seen.add(danced);
             }

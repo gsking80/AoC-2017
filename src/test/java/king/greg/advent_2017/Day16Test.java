@@ -34,7 +34,7 @@ public class Day16Test {
         final Day16 day16 = new Day16("abcde");
         final FileReader fileReader = new FileReader(getClass().getClassLoader().getResource("day16/Test1.txt").getPath());
         final BufferedReader buf = new BufferedReader(fileReader);
-        Assertions.assertThat(day16.dance(buf.readLine(), 1000000000)).isEqualTo("baedc");
+        Assertions.assertThat(day16.dance(buf.readLine(), 1000000000)).isEqualTo("abcde");
         buf.close();
     }
 
