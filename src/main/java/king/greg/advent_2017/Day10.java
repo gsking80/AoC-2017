@@ -64,4 +64,11 @@ public class Day10 {
 		}
 		return builder.toString();
 	}
+
+	public String knotHash(final String input) {
+		hashBytes(input);
+		sparseHash(64);
+		denseHash();
+		return knotValue();
+	}
 }

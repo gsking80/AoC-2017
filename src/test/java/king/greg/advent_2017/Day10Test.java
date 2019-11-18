@@ -31,19 +31,13 @@ public class Day10Test {
 	@Test
 	public void test2a() {
 		final Day10 day10 = new Day10(256);
-		day10.hashBytes("");
-		day10.sparseHash(64);
-		day10.denseHash();
-		Assertions.assertThat(day10.knotValue()).isEqualTo("a2582a3a0e66e6e86e3812dcb672a272");
+		Assertions.assertThat(day10.knotHash("")).isEqualTo("a2582a3a0e66e6e86e3812dcb672a272");
 	}
 
 	@Test
 	public void test2b() {
 		final Day10 day10 = new Day10(256);
-		day10.hashBytes("AoC 2017");
-		day10.sparseHash(64);
-		day10.denseHash();
-		Assertions.assertThat(day10.knotValue()).isEqualTo("33efeb34ea91902bb2f59c9920caa6cd");
+		Assertions.assertThat(day10.knotHash("AoC 2017")).isEqualTo("33efeb34ea91902bb2f59c9920caa6cd");
 	}
 
 	@Test
