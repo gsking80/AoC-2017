@@ -29,4 +29,11 @@ public class Day13Test {
         Assertions.assertThat(day13.earliestSafeStart()).isEqualTo(10);
     }
 
+    @Test
+    public void testSolution2() throws FileNotFoundException {
+        final FileReader fileReader = new FileReader(getClass().getClassLoader().getResource("day13/input.txt").getPath());
+        final Day13 day13 = new Day13(fileReader);
+        Assertions.assertThat(day13.earliestSafeStart()).isEqualTo(3897604);
+    }
+
 }

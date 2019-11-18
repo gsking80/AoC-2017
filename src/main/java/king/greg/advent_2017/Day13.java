@@ -52,11 +52,25 @@ public class Day13 {
         return severity;
     }
 
+    public boolean caught(final int startingTime) {
+        for (int depth = 0; depth <= maxDepth; depth++) {
+            final int range = scanners.getOrDefault(depth, 0);
+            if (range == 0) {
+                continue;
+            }
+            if (((depth + startingTime) % ((range - 1) * 2)) == 0) {
+//                System.out.println("Caught! Depth = " + depth + ", Starting time = " + startingTime);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public int earliestSafeStart() {
         int delay = 0;
 
         while (true) {
-            if (severity(delay) == 0) {
+            if (!caught(delay)) {
                 return delay;
             }
             delay++;
