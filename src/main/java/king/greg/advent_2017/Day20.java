@@ -3,13 +3,10 @@ package king.greg.advent_2017;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Pattern;
-
-import com.sun.xml.internal.txw2.output.StreamSerializer;
+import java.util.stream.Collectors;
+import java.util.stream.LongStream;
 
 public class Day20 {
 	
@@ -40,9 +37,31 @@ public class Day20 {
 	        }
 		
 	}
-	
-	
-	
+
+	public int nonCollided() {
+		for(int i = 0; i < 100; i++) {
+			removeCollisions();
+			for(final Particle particle: particles) {
+				particle.tick();
+			}
+		}
+		return particles.size();
+	}
+
+	private void removeCollisions() {
+		Set<Particle> collidedParticles = new HashSet<>();
+		for (final Particle a: particles) {
+			for (final Particle b: particles) {
+				if (a != b && Arrays.equals(a.getPosition(), b.getPosition())) {
+					collidedParticles.add(a);
+					collidedParticles.add(b);
+				}
+			}
+		}
+		particles.removeAll(collidedParticles);
+	}
+
+
 	class Particle {
 		
 		public int getId() {
@@ -59,6 +78,21 @@ public class Day20 {
 
 		public long[] getAcceleration() {
 			return acceleration;
+		}
+
+		public long getAbsoluteAcceleration() {
+			return LongStream.of(acceleration).map(Math::abs).sum();
+		}
+
+		public long getAbsoluteVelocity() {
+			return LongStream.of(velocity).map(Math::abs).sum();
+		}
+
+		public void tick() {
+			for (int i = 0; i < 3; i++) {
+				velocity[i] += acceleration[i];
+				position[i] += velocity[i];
+			}
 		}
 
 		final int id;
@@ -79,7 +113,7 @@ public class Day20 {
 
 	public int staysClosest() {
 		// TODO Auto-generated method stub
-		return -1;
+		return particles.stream().min(Comparator.comparing(Particle::getAbsoluteAcceleration).thenComparing(Particle::getAbsoluteVelocity)).get().getId();
 	}
 	
 }
