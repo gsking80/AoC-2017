@@ -1,6 +1,5 @@
 package king.greg.advent_2017;
 
-import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class Day10 {

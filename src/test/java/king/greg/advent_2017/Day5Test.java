@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-
 import org.junit.Test;
 
 public class Day5Test {

@@ -3,8 +3,6 @@ package king.greg.advent_2017;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class Day14Test {
 
     @Test

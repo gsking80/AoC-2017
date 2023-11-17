@@ -1,6 +1,8 @@
 package king.greg.advent_2017;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class Day16 {

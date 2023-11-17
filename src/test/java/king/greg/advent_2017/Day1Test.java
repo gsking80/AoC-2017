@@ -2,9 +2,8 @@ package king.greg.advent_2017;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Test;
-
 import junit.framework.TestCase;
+import org.junit.Test;
 
 public class Day1Test extends TestCase {
 	

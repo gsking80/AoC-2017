@@ -1,6 +1,6 @@
 package king.greg.advent_2017;
 
-import java.awt.*;
+import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

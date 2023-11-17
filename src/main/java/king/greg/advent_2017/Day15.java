@@ -1,7 +1,5 @@
 package king.greg.advent_2017;
 
-import java.math.BigInteger;
-
 public class Day15 {
 
     final static long FACTOR_A = 16807;

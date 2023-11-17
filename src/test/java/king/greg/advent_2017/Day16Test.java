@@ -1,13 +1,10 @@
 package king.greg.advent_2017;
 
-import org.assertj.core.api.Assertions;
-import org.junit.Test;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
-import static org.junit.Assert.*;
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
 
 public class Day16Test {
 

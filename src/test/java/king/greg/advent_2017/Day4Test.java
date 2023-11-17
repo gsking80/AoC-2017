@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
 import org.junit.Test;
 
 public class Day4Test {
